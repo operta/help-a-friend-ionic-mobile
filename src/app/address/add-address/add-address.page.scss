@@ -1,0 +1,64 @@
+ion-header
+{
+  ion-toolbar
+  {
+    --background: transparent;
+    --color: var(--ion-color-primary);
+    position: absolute;
+    width: 100%;
+  }
+}
+
+
+ion-footer
+{
+  background: white !important;
+
+  .btn-holder
+  {
+    padding-bottom: 16px;
+  }
+
+}
+
+
+.address-modal .the-form {
+  .input-item {
+    margin: 10px 0;
+
+    ion-label {
+      color: #244574 !important;
+      font-family: 'MRegular' !important;
+    }
+
+
+    ion-item {
+      ion-input {
+        font-family: 'MLight' !important;
+      }
+    }
+  }
+
+  .rem-forget-holder {
+    ion-item {
+      --padding-start: 0;
+
+      ion-checkbox {
+        margin-right: 5px !important;
+      }
+
+      ion-label {
+        color: #808C9F !important;
+        font-family: 'MRegular' !important;
+        font-size: 0.9rem !important;
+      }
+    }
+
+    p {
+      color: var(--ion-color-primary) !important;
+      font-family: 'MRegular' !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+}

@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Add address</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="close(false)">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<br>
+<ion-content class="ion-padding" scroll-y="false">
+    <div class="the-form ion-padding-vertical">
+        <form [formGroup]="addressForm">
+            <div class="input-item">
+                <ion-label>Address</ion-label>
+                <ion-item>
+                    <ion-input type="text" formControlName="address" required></ion-input>
+                </ion-item>
+            </div>
+            <div class="input-item">
+                <ion-label>Street Number</ion-label>
+                <ion-item>
+                    <ion-input type="number" formControlName="streetNumber" required></ion-input>
+                </ion-item>
+            </div>
+            <div class="input-item">
+                <ion-label>Floor</ion-label>
+                <ion-item>
+                    <ion-input type="number" formControlName="floor"></ion-input>
+                </ion-item>
+            </div>
+            <div class="input-item">
+                <ion-label>Door</ion-label>
+                <ion-item>
+                    <ion-input type="text" formControlName="door"></ion-input>
+                </ion-item>
+            </div>
+            <div class="input-item">
+                <ion-label>City</ion-label>
+                <ion-item>
+                    <ion-input type="text" formControlName="city" required></ion-input>
+                </ion-item>
+            </div>
+        </form>
+
+    </div>
+</ion-content>
+<ion-footer>
+    <div class="btn-holder ion-padding-vertical">
+        <ion-button (click)="addAddress()"
+                    [disabled]="addressForm.invalid"
+                    expand="block" shape="round">
+            Continue
+        </ion-button>
+    </div>
+</ion-footer>
+
+

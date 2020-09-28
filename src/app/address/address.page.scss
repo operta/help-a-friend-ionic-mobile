@@ -1,0 +1,51 @@
+ion-toolbar
+{
+    --color: var(--ion-color-primary);
+}
+
+
+ion-content
+{
+    .address-selector
+    {
+        .title
+        {
+            h4
+            {
+                color: #244574;
+                font-family: 'MSBold';
+                margin-top:0;
+            }
+        }
+
+        .address-list
+        {
+            .new-address
+            {
+                ion-button
+                {
+                    font-family: 'MSBold';
+                }
+            }
+        }
+    }
+
+    .bootom-pic-holder
+    {
+        margin-top: 5vh;
+        img
+        {
+            height: 32vh;
+        }
+    }
+}
+
+ion-footer
+{
+    background: white !important;
+    .btn-holder
+    {
+        padding-bottom: 16px;
+    }
+  
+}
