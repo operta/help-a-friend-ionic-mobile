@@ -1,0 +1,9 @@
+// export const SERVER_API_URL = 'https://3.126.117.204:8080/';
+export const SERVER_API_URL = 'http://localhost:8080/';
+export const DATE_FORMAT = 'YYYY-MM-DD';
+export const PROBLEM_BASE_URL = 'https://www.jhipster.tech/problem';
+export const EMAIL_ALREADY_USED_TYPE = PROBLEM_BASE_URL + '/email-already-used';
+export const LOGIN_ALREADY_USED_TYPE = PROBLEM_BASE_URL + '/login-already-used';
+export const PUSHER_APP_ID = '1072132';
+export const PUSHER_APP_KEY = '495c3c4a8964e048bea1';
+export const PUSHER_CLUSTER = 'eu';

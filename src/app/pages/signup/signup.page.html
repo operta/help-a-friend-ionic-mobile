@@ -1,0 +1,119 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="login" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'register' | translate }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" scroll-y="false">
+    <div class="the-form ion-padding-vertical">
+        <form [formGroup]="registerForm">
+            <div class="input-item">
+                <ion-label>{{'emailaddress' | translate}}</ion-label>
+                <ion-item>
+                    <ion-input type="email" placeholder="abc@def.com" formControlName="email"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="registerForm.get('email')!.invalid && (registerForm.get('email')!.dirty || registerForm.get('email')!.touched)">
+                    <ion-text color="danger" *ngIf="registerForm.get('email')?.errors?.required">
+                        {{'emailRequired' | translate}}
+                    </ion-text>
+                    <ion-text color="danger" *ngIf="registerForm.get('email')?.errors?.invalid">
+                        INVALID
+                        {{'emailInvalid' | translate}}
+                    </ion-text>
+
+                    <ion-text color="danger" *ngIf="registerForm.get('email')?.errors?.minlength">
+                        {{'emailCharMin' | translate}}
+                    </ion-text>
+
+                    <ion-text color="danger" *ngIf="registerForm.get('email')?.errors?.maxlength">
+                        {{'emailCharMax' | translate}}
+                    </ion-text>
+                </ion-item>
+            </div>
+            <div class="input-item">
+                <ion-label>{{'newPass' | translate}}</ion-label>
+                <ion-item>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="registerForm.get('password')!.invalid && (registerForm.get('password')!.dirty || registerForm.get('password')!.touched)">
+                    <ion-text color="danger"
+                              *ngIf="registerForm.get('password')?.errors?.required">
+                        {{'passRequired' | translate}}
+                    </ion-text>
+
+                    <ion-text color="danger"
+                              *ngIf="registerForm.get('password')?.errors?.minlength">
+                        {{'passCharMin' | translate}}
+                    </ion-text>
+
+                    <ion-text color="danger"
+                              *ngIf="registerForm.get('password')?.errors?.maxlength">
+                        {{'passCharMax' | translate}}
+                    </ion-text>
+                </ion-item>
+            </div>
+            <div class="input-item">
+                <ion-label>{{'confirmPass' | translate}}</ion-label>
+                <ion-item>
+                    <ion-input type="password" placeholder="password" formControlName="confirmPassword"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="registerForm.get('confirmPassword')!.invalid && (registerForm.get('confirmPassword')!.dirty || registerForm.get('confirmPassword')!.touched)">
+                    <ion-text color="danger"
+                              *ngIf="registerForm.get('confirmPassword')?.errors?.required">
+                        {{'confPassRequired' | translate}}
+                    </ion-text>
+
+                    <ion-text color="danger"
+                              *ngIf="registerForm.get('confirmPassword')?.errors?.minlength">
+                        {{'confPassCharMin' | translate}}
+                    </ion-text>
+
+                    <ion-text color="danger"
+                              *ngIf="registerForm.get('confirmPassword')?.errors?.maxlength">
+                        {{'confPassCharMax' | translate}}
+                    </ion-text>
+                </ion-item>
+            </div>
+            <ion-item lines="none">
+                <ion-checkbox slot="start" mode="ios" formControlName="isHelper" checked="true"></ion-checkbox>
+                <ion-label>I need help</ion-label>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-checkbox slot="start" mode="ios" formControlName="isHelpSeeker"></ion-checkbox>
+                <ion-label>I want to offer help</ion-label>
+            </ion-item>
+        </form>
+
+        <div class="btn-holder ion-padding-vertical">
+            <ion-button (click)="register()"
+                        [disabled]="registerForm.invalid" [translate]="'register'"
+                        expand="block" shape="round">
+                SIGNUP
+            </ion-button>
+        </div>
+        <ion-item>
+            <ion-text *ngIf="success" color="success">
+                <h2>{{'registrationSaved' | translate}}</h2>{{'checkEmail' | translate}}</ion-text>
+            <ion-text color="danger" *ngIf="error">
+                <strong>{{'registrationFailed' | translate}}</strong> {{'tryAgainLater' | translate}}
+            </ion-text>
+
+            <ion-text color="danger" *ngIf="helperError">
+                <strong>{{'helperError' | translate}}</strong> {{'pickOne' | translate}}
+            </ion-text>
+
+            <ion-text color="danger" *ngIf="errorEmailExists">
+                <strong>{{'emailError' | translate}}</strong> {{'chooseAnother' | translate}}
+            </ion-text>
+            <ion-text color="danger" *ngIf="errorEmailExists">
+                {{'passwordError' | translate}}
+            </ion-text>
+        </ion-item>
+    </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title>Pick a category</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="assets/imgs/icn-menu.svg">
+            </ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <!--<ion-button expand="block" >-->
+    <!--<a href="tel:555-5555"><ion-text color="light">CALL FOR HELP</ion-text></a>-->
+    <!--</ion-button>-->
+    <!--<br>-->
+    <div class="category-holder">
+        <div class="cat-holder animate__animated animate__backInUp">
+            <ion-grid fixed>
+                <ion-row>
+                    <ion-col *ngFor="let cat of categories" size="6">
+                        <div class="cat-card ion-text-center" (click)="setCategory(cat.id)">
+                            <div class="cat-img">
+                                <img src="assets/imgs/categories/vegetables.svg" alt="">
+                            </div>
+                            <h4>{{cat?.name}}</h4>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

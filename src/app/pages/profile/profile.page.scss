@@ -1,0 +1,41 @@
+
+
+
+ion-content
+{
+    .profile-pic-holder
+    {
+        ion-avatar
+        {
+            margin: 0 auto;
+            height: 6rem;
+            width: 6rem;
+            border: 2px solid var(--ion-color-primary) !important;
+        }
+
+        p
+        {
+            font-family: 'MLight';
+            color: #808C9F;
+            margin: 0;
+        }
+    }
+
+    .content-card
+    {
+        box-shadow:3px 5px 43px rgba(0, 0, 0, 0.05);
+        margin: 10px 0;
+
+        ion-item
+        {
+            ion-label
+            {
+                p
+                {
+                    font-family: 'MSBold';
+                    color: var(--ion-color-primary);
+                }
+            }
+        }
+    }
+}

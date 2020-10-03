@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add description</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" scroll-y="false">
+  <div class="the-form ion-padding-vertical">
+    <form [formGroup]="requestForm">
+      <div class="input-item">
+        <ion-label>Short description</ion-label>
+        <ion-item>
+          <ion-input type="text" formControlName="name" required></ion-input>
+        </ion-item>
+      </div>
+      <div class="input-item">
+        <ion-label>Description</ion-label>
+        <ion-item>
+          <ion-textarea placeholder="Give more details about you request here" formControlName="description"></ion-textarea>
+        </ion-item>
+      </div>
+    </form>
+
+    <div class="btn-holder ion-padding-vertical">
+      <ion-button (click)="createRequest()"
+                  [disabled]="requestForm.invalid"
+                  expand="block" shape="round">
+        Get help
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
-import {HomePage} from './home.page';
+import {ChatPage} from './chat.page';
 
-import {HomePageRoutingModule} from './home-routing.module';
+import {ChatPageRoutingModule} from './chat-routing.module';
 import {PusherService} from '../pusher.service';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -14,13 +14,13 @@ import {HttpClientModule} from '@angular/common/http';
         CommonModule,
         FormsModule,
         IonicModule,
-        HomePageRoutingModule,
+        ChatPageRoutingModule,
         HttpClientModule
     ],
-    declarations: [HomePage],
+    declarations: [ChatPage],
     providers: [
         PusherService
     ]
 })
-export class HomePageModule {
+export class ChatPageModule {
 }

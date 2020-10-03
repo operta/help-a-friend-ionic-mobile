@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="searchbar-holder">
+    <ion-searchbar mode="md" type="text" placeholder="Enter product"
+                   showCancelButton="never"
+                   debounce="500"
+                   (ionBlur)="CloseList()" (ionClear)="CloseList()">
+                   <!--(ionInput)="getItems($event)" -->
+    </ion-searchbar>
+  </div>
+
+
+  <div class="search-img-holder" *ngIf="searchPic">
+    <img src="https://i.ibb.co/0qr9xxd/searchh.jpg" alt="">
+  </div>
+
+
+  <div class="no-holder" *ngIf="noResultPic">
+   
+    <ion-row>
+      <ion-col size="6" id="img-col">
+        <img src="https://i.ibb.co/vJ7v7PR/exploree.png" alt="">
+      </ion-col>
+      <ion-col size="6" class="flex al-fend">
+        <div class="no-holder ion-text-left">
+          <img src="assets/imgs/alert-circle.svg" alt="">
+          <h1>No Results</h1>
+          <p>Try different keyword</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="the-list" *ngIf="isItemAvailable">
+    <div class="result-card" *ngFor="let item of items">
+      <ion-item lines="none">
+        <div class="thumb ion-text-center" slot="start">
+          <img [src]="item.pImage" alt="">
+        </div>
+        <ion-label>
+          <p>{{item.pcategory}}</p>
+          <h2>{{item.pname}}</h2>
+          <star-rating value="4" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#F5F5F5" size="22px"
+          readonly="false" ></star-rating>
+          <h5>${{item.pprice}} <span>({{item.pquanitty}}{{item.punit}})</span> </h5>
+        </ion-label>
+      </ion-item>
+    </div>
+  
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+<svg id="heart" xmlns="http://www.w3.org/2000/svg" width="57.519" height="84.5" viewBox="0 0 57.519 84.5">
+  <path id="Path" d="M44.3,3.625a12.819,12.819,0,0,0-17.865,0L24,6.008,21.565,3.625a12.822,12.822,0,0,0-17.865,0,12.191,12.191,0,0,0,0,17.5L6.134,23.5,24,41,41.865,23.5,44.3,21.12a12.188,12.188,0,0,0,0-17.5Z" transform="translate(5 41)" fill="none" stroke="#244574" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+  <rect id="Rectangle" width="5" height="18" rx="2.5" transform="translate(9.332 14.398) rotate(-20)" fill="#244574"/>
+  <rect id="Rectangle_Copy" data-name="Rectangle Copy" width="5" height="28" rx="2.5" transform="translate(27.926)" fill="#244574"/>
+  <rect id="Rectangle_Copy_2" data-name="Rectangle Copy 2" width="5" height="18" rx="2.5" transform="translate(44.488 12.688) rotate(20)" fill="#244574"/>
+  <rect id="Rectangle_Copy_3" data-name="Rectangle Copy 3" width="4" height="6" rx="2" transform="translate(54.09 26.398) rotate(31)" fill="#244574"/>
+  <rect id="Rectangle_Copy_4" data-name="Rectangle Copy 4" width="4" height="6" rx="2" transform="translate(0 28.459) rotate(-31)" fill="#244574"/>
+</svg>

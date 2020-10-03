@@ -127,3 +127,86 @@
     }
   }
 }
+
+
+ion-toolbar
+{
+  --color: var(--ion-color-primary);
+}
+
+
+.header-item
+{
+  ion-avatar
+  {
+    --border-radius: 50%;
+    --border-color: var(--ion-color-primary);
+    --border-width:2px;
+    --border-style: solid;
+    height: 5rem;
+    width: 5rem;
+    border: 2px solid var(--ion-color-primary) !important;
+    margin-right: 10px;
+  }
+
+
+  ion-label
+  {
+    h1
+    {
+      color: var(--ion-color-primary);
+      font-family: 'MSBold' !important;
+      font-size: 1.2rem;
+    }
+
+    p
+    {
+      color: #808C9F;
+      font-family: 'MRegular' !important;
+
+    }
+  }
+}
+
+.rate-holder
+{
+  margin-top: 10px;
+  h5
+  {
+    color: #244574;
+    font-family: 'MMedium';
+    margin: 0;
+  }
+}
+
+.input-holder
+{
+  h5
+  {
+    color: #244574;
+    font-family: 'MMedium';
+    margin: 0;
+  }
+
+  ion-item
+  {
+    margin-top: 20px;
+    border: 1px solid #808C9F;
+    border-radius: 0.5rem;
+
+    ion-text-area
+    {
+      font-family: 'MMedium';
+    }
+  }
+}
+
+ion-footer
+{
+  background: white !important;
+  .btn-holder
+  {
+    padding: 10px 0;
+  }
+
+}

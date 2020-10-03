@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="assets/imgs/icn-menu.svg">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>wishlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="empty-holder ion-text-right">
+    <img src="https://i.ibb.co/6n3ytVz/no.png" alt="" class="animate__animated animate__fadeInLeft animate__slower">
+  </div>
+  <div class="content-holder ion-text-left ion-padding-start">
+    <img src="assets/imgs/empty.svg" alt="">
+    <h1>Hmm ! Wishlist Empty</h1>
+    <p>Let's do some shopping</p>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border ion-padding-horizontal">
+  <ion-toolbar>
+    <div class="btn-holder">
+      <ion-button expand="block" shape="round" (click)="goHome()">
+        SHOP NOW
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

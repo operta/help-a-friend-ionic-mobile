@@ -1,0 +1,150 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="myorders"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="status-holder ion-padding-bottom">
+    <div class="title">
+      <h5>Order No. <span>#20200510010</span>  Status</h5>
+    </div>
+    <div class="order-list">
+      <ion-item lines="none"  *ngIf="type=='pending'">
+        <div class="thumb" slot="start">
+          <img src="assets/imgs/icn-packing.svg" alt="">
+        </div>
+        <ion-label>
+          <h2>Pending</h2>
+          <p class="description ion-text-wrap">Your order number <span>#20200510010</span> was confirmed and now in the queue</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item lines="none" *ngIf="type=='oway'">
+        <div class="thumb" slot="start">
+          <img src="assets/imgs/icn-delivery.svg" alt="">
+        </div>
+        <ion-label>
+          <h2>On the way</h2>
+          <p class="description ion-text-wrap">Your order number <span>#20200510010</span> was confirmed and now on the way to your
+            home</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item lines="none" *ngIf="type=='foreview'">
+        <div class="thumb" slot="start">
+          <img src="assets/imgs/icn-wr.svg" alt="">
+        </div>
+        <ion-label>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding">
+              <h2>Completed</h2>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right ion-no-padding">
+            </ion-col>
+            <ion-col size="12" class="ion-no-padding">
+              <p class="description ion-text-wrap">Your order number <span>#20200502010</span> Delivered. You marked it as completed
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item lines="none" *ngIf="type=='completed'">
+        <div class="thumb" slot="start">
+          <img src="assets/imgs/icn-done.svg" alt="">
+        </div>
+        <ion-label>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding">
+              <h2>Completed</h2>
+            </ion-col>
+            <ion-col size="6" class="flex al-center jc-end ion-text-right ion-no-padding">
+              <ion-icon name="star"></ion-icon>
+              <p>&nbsp;5.0</p>
+            </ion-col>
+            <ion-col size="12" class="ion-no-padding">
+              <p class="description ion-text-wrap">Your order number <span>#20200502010</span> Delivered. You marked it as completed
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+
+  <div class="details-holder">
+    <div class="title">
+      <h5>Order Details</h5>
+    </div>
+    <div class="details">
+      <ion-row>
+        <ion-col size="6">
+          <h6>Organic Carrots</h6>
+        </ion-col>
+        <ion-col size="3">
+          <p>1Kg</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          <p>$20.00</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <h6>Organic Carrots</h6>
+        </ion-col>
+        <ion-col size="3">
+          <p>1Kg</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          <p>$20.00</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <h6>Organic Carrots</h6>
+        </ion-col>
+        <ion-col size="3">
+          <p>1Kg</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          <p>$20.00</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <h6>Organic Carrots</h6>
+        </ion-col>
+        <ion-col size="3">
+          <p>1Kg</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          <p>$20.00</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="total-row">
+        <ion-col size="6">
+          <h6>Total</h6>
+        </ion-col>
+        <ion-col size="3" >
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          <p>$150.00</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border ion-padding-horizontal" *ngIf="type=='foreview'">
+  <ion-toolbar>
+    <div class="btn-holder">
+      <ion-button expand="block" shape="round" (click)="goAddreview()">
+       Add Review
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

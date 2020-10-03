@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="payment"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="img-holder">
+    <img src="https://i.ibb.co/MNMWZJL/summary.png" class="animate__animated animate__fadeInLeft">
+  </div>
+  <div class="summary animate__animated animate__bounceInUp">
+    <ion-row>
+      <ion-col size="6">
+        <p>Purchased</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <p>$170.00</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <p>Coupon</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <p>-$50.00</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <p>Delivery Cost</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <p>$30.00</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="total-row">
+      <ion-col size="6">
+        <p>Total</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <p>$150.00</p>
+      </ion-col>
+    </ion-row>
+  </div>
+
+ 
+</ion-content>
+<ion-footer class="ion-no-border ion-padding-horizontal">
+  <ion-toolbar>
+    <div class="btn-holder">
+      <ion-button expand="block" shape="round" (click)="Pay()">
+        Pay Now
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

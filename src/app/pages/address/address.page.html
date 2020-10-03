@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button *ngIf="isDefault">
+                <img src="assets/imgs/icn-menu.svg">
+            </ion-menu-button>
+            <ion-back-button *ngIf="!isDefault"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="address-selector">
+        <ng-container *ngIf="locations$ | async as locations">
+            <ng-container *ngIf="locations && locations.length > 0">
+                <div class="title">
+                    <h4>Saved Locations</h4>
+                </div>
+            </ng-container>
+                <div class="address-list">
+                    <ion-list>
+                        <ng-container *ngIf="locations && locations.length > 0">
+                        <ion-radio-group name="auto" [value]="defaultLocationId" (ionChange)="setLocation($event)">
+                            <ion-item-sliding *ngFor="let loc of locations">
+                                <ion-item>
+                                    <ion-label>
+                                        <h1>{{loc.address}} {{loc.streetNumber}}</h1>
+                                        <p>{{loc.floor}}, {{loc.door}} / {{loc.city}}</p>
+                                    </ion-label>
+                                    <ion-radio [value]="loc.id"
+                                               slot="start"
+
+                                    ></ion-radio>
+                                </ion-item>
+                                <ion-item-options side="end">
+                                    <ion-item-option (click)="removeItem(loc.id)" color="danger">
+                                        Delete
+                                    </ion-item-option>
+                                </ion-item-options>
+                            </ion-item-sliding>
+                        </ion-radio-group>
+                        </ng-container>
+                        <div class="new-address">
+                            <ion-button expand="block" fill="clear" (click)="presentAddAddress()">
+                                <ion-icon slot="start" name="add"></ion-icon>
+                                Add New Location
+                            </ion-button>
+                        </div>
+
+                        <div class="bootom-pic-holder ion-text-right">
+                            <img src="https://i.ibb.co/bHVBSXJ/address.png" alt="" class="animate__animated animate__fadeInRight">
+                        </div>
+                    </ion-list>
+                </div>
+            </ng-container>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border ion-padding-horizontal">
+    <ion-toolbar>
+        <div class="btn-holder ion-padding-top">
+            <ion-button expand="block" shape="round" (click)="goCreateRequest()" *ngIf="!isDefault" [disabled]="!selectedLocationId">
+                CONTINUE
+            </ion-button>
+        </div>
+    </ion-toolbar>
+</ion-footer>

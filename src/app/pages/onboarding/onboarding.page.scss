@@ -1,0 +1,54 @@
+.topic-holder
+{
+    h1
+    {
+        color: var(--ion-color-primary) !important;
+    }
+
+    p
+    {
+        color: #7B7B7B !important;
+        font-family: 'MLight' !important;
+    }
+}
+
+.img-holder
+{
+    img
+    {
+        height: 55vh;
+    }
+}
+
+.btn-holder
+{
+    padding-bottom: 10px;
+    ion-button
+    {
+        --color: white;
+    }
+}
+
+
+
+.delivery
+{
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.none
+{
+    display: none;
+}

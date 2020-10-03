@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <!--<ion-title>{{request?.idCategoryName}}</ion-title>-->
+    </ion-toolbar>
+</ion-header>
+
+<ng-container *ngIf="request">
+    <ion-content>
+        <ion-grid fixed>
+            <ion-row>
+                <ion-col size="12" class="ion-no-padding">
+                    <div class="topic-holder ion-padding">
+                        <h1 class="ion-text-center">Cleaning</h1>
+                        <!--<h1 class="ion-text-center">{{request?.idCategoryName}}</h1>-->
+                        <h1 class="ion-text-center">{{request?.name}}</h1>
+                        <p class="ion-text-wrap ion-text-left">
+                            {{request?.description}}
+                        </p>
+                    </div>
+                    <!--<div class="img-holder ion-text-left ion-padding ">-->
+                    <!--<img src="https://i.ibb.co/rw7yWgw/explore.png" alt=""-->
+                    <!--class="animate__animated animate__fadeInLeft">-->
+                    <!--</div>-->
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12" class="ion-no-padding">
+                    <div class="topic-holder ion-padding">
+                        <h1 class="ion-text-center">Location</h1>
+                        <p class="ion-text-wrap ion-text-left">
+                            {{request?.idLocation?.city}}
+                        </p>
+                        <p class="ion-text-wrap ion-text-left">
+                            {{request?.idLocation?.address}} {{request?.idLocation?.streetNumber}}
+                        </p>
+                        <p class="ion-text-wrap ion-text-left">
+                            {{request?.idLocation?.floor}}
+                        </p><p class="ion-text-wrap ion-text-left">
+                        {{request?.idLocation?.door}}
+                    </p>
+                    </div>
+                    <!--<div class="img-holder ion-text-left ion-padding ">-->
+                    <!--<img src="https://i.ibb.co/rw7yWgw/explore.png" alt=""-->
+                    <!--class="animate__animated animate__fadeInLeft">-->
+                    <!--</div>-->
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-content>
+    <ion-footer class="ion-no-border">
+        <ion-toolbar>
+            <ion-row>
+                <ng-container *ngIf="!request?.isArchived && !request?.isFinished">
+                    <ng-container *ngIf="!viewForHelper">
+                        <ion-col size="6">
+                            <div class="btn-holder">
+                                <ion-button expand="block" shape="round" (click)="tryComplete()">
+                                    COMPLETE
+                                </ion-button>
+                            </div>
+                        </ion-col>
+                        <ion-col size="6">
+                            <div class="btn-holder">
+                                <ion-button expand="block" shape="round" (click)="goToChat(request)">
+                                    CHAT
+                                </ion-button>
+                            </div>
+                        </ion-col>
+                        <ion-col size="12" *ngIf="noHelpers">
+                            <div class="btn-holder">
+                                <ion-button expand="block" shape="round" color="danger" (click)="tryArchive()">
+                                    DELETE
+                                </ion-button>
+                            </div>
+                        </ion-col>
+                    </ng-container>
+                    <ng-container *ngIf="viewForHelper">
+                        <ion-col size="12">
+                            <div class="btn-holder">
+                                <ion-button expand="block" shape="round">
+                                    CHAT
+                                </ion-button>
+                            </div>
+                        </ion-col>
+                    </ng-container>
+                </ng-container>
+            </ion-row>
+        </ion-toolbar>
+    </ion-footer>
+
+</ng-container>

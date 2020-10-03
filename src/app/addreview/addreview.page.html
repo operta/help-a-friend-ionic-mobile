@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="orderdetails"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add a review</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="avatar-holder">
+    <ion-item lines="none" class="header-item">
+      <ion-avatar>
+        <img src="assets/imgs/user.svg" />
+      </ion-avatar>
+      <ion-label>
+        <h1>John Doe</h1>
+        <p>2020/05/10</p>
+      </ion-label>
+    </ion-item>
+  </div>
+  <div class="rate-holder">
+    <h5>Rate this product</h5>
+    <div class="rating-holder ">
+      <star-rating value="0" totalstars="5" checkedcolor="#FFBF2C" uncheckedcolor="#cccccc"
+        size="32px" readonly="false"></star-rating>
+    </div>
+  </div>
+  <div class="input-holder">
+    <h5>Leave your valubale comment here</h5>
+    <ion-item lines="none">
+      <ion-textarea rows='10' placeholder="ENTER YOUR REVIEW"></ion-textarea>
+    </ion-item>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border ion-padding-horizontal">
+  <ion-toolbar>
+    <div class="btn-holder">
+      <ion-button expand="block" shape="round" >
+      SUBMIT REVIEW
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

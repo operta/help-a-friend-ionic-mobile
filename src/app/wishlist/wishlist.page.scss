@@ -1,0 +1,46 @@
+ion-toolbar
+{
+    --color: var(--ion-color-primary);
+}
+
+
+ion-content
+{
+    .empty-holder
+    {
+        img
+        {
+            height: 40vh;
+        }
+    }
+
+    .content-holder
+    {
+     
+
+        h1
+        {
+            color: #244574;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+
+        p
+        {
+            color: #808C9F;
+            margin: 0;
+        }
+    }
+}
+
+ion-footer
+{
+    background: white !important;
+
+    .btn-holder
+    {
+        padding-bottom: 16px;
+    }
+  
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <g id="icn-done" transform="translate(-675 3498)">
+    <g id="Group_151" data-name="Group 151" transform="translate(5 321)">
+      <path id="Path_2" data-name="Path 2" d="M0,0H200V200H0Z" transform="translate(670 -3819)" fill="none"/>
+    </g>
+    <g id="Group_152" data-name="Group 152" transform="translate(10.194 10.168)">
+      <g id="check-circle" transform="translate(744.806 -3384.168)">
+        <path id="Path" d="M121.469,55.181v5.588A60.735,60.735,0,1,1,85.454,5.261" transform="translate(-41 -85)" fill="none" stroke="#ff624b" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="15"/>
+      </g>
+      <g id="check-circle-2" data-name="check-circle" transform="translate(713.806 -3458.168)">
+        <path id="Path-2" data-name="Path" d="M99.674,45.28v4.585A49.837,49.837,0,1,1,70.121,4.317" transform="translate(0 0)" fill="none" stroke="#29c17e" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="15"/>
+        <path id="Path-3" data-name="Path" d="M64.6,0,14.909,49.837,0,34.9" transform="translate(36.916 12.921)" fill="none" stroke="#29c17e" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="15"/>
+      </g>
+    </g>
+  </g>
+</svg>

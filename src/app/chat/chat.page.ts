@@ -11,11 +11,11 @@ interface Message {
 }
 
 @Component({
-    selector: 'app-home',
-    templateUrl: 'home.page.html',
-    styleUrls: ['home.page.scss'],
+    selector: 'app-chat',
+    templateUrl: 'chat.page.html',
+    styleUrls: ['chat.page.scss'],
 })
-export class HomePage implements OnInit {
+export class ChatPage implements OnInit {
     messages: Array<Message> = [];
     message: string = '';
     lastMessageId;

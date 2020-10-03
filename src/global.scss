@@ -8,19 +8,350 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
-
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
-
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
-
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
 @import "~@ionic/angular/css/float-elements.css";
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+h1 {
+  font-family: 'MBold' !important;
+}
+
+
+ion-title {
+  color: var(--ion-color-primary);
+  font-family: 'MBold' !important;
+  font-size: 24px !important;
+
+}
+
+.title-holder {
+  h1 {
+    color: var(--ion-color-primary) !important;
+  }
+}
+
+.btn-holder {
+  ion-button {
+    --color: white;
+    --box-shadow: none;
+    font-family: 'MSBold' !important;
+    height: 3rem !important;
+  }
+}
+
+
+.the-form {
+  .input-item {
+    margin: 10px 0;
+
+    ion-label {
+      color: #244574 !important;
+      font-family: 'MRegular' !important;
+    }
+
+
+    ion-item {
+      ion-input {
+        font-family: 'MLight' !important;
+      }
+    }
+  }
+
+  .rem-forget-holder {
+    ion-item {
+      --padding-start: 0;
+
+      ion-checkbox {
+        margin-right: 5px !important;
+      }
+
+      ion-label {
+        color: #808C9F !important;
+        font-family: 'MRegular' !important;
+        font-size: 0.9rem !important;
+      }
+    }
+
+    p {
+      color: var(--ion-color-primary) !important;
+      font-family: 'MRegular' !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+}
+
+
+.bottom-field-holder {
+  p {
+    color: #77869E;
+    font-family: 'MLight' !important;
+
+    span {
+      color: var(--ion-color-primary);
+      font-family: 'MRegular' !important;
+    }
+  }
+}
+
+.searchbar-holder {
+  ion-searchbar {
+    .searchbar-input-container {
+      input {
+        background: #fdfdfd !important;
+        box-shadow: none !important;
+        border-radius: 1rem !important;
+        border: 1px solid var(--ion-color-primary);
+        font-family: 'MMedium';
+      }
+    }
+  }
+}
+
+.product-card {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0px 15px 15px rgba(128, 130, 139, 0.15);
+  margin: 10px 0;
+  height: 40vh;
+  position: relative;
+
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .discount-holder {
+      background: #CBEBE2;
+      border-top-left-radius: 0.5rem;
+      padding: 5px;
+
+      p {
+        color: var(--ion-color-primary) !important;
+        margin: 0 !important;
+      }
+    }
+
+
+    .fav-holder {
+
+      color: #CBEBE2;
+      font-size: 1.5rem;
+      padding: 5px;
+    }
+  }
+
+  .img-holder {
+    img {
+      height: 14vh;
+    }
+  }
+
+  .details {
+    padding: 5px;
+
+    .category {
+      p {
+        font-family: 'MLight';
+        font-size: 0.8rem !important;
+        margin: 2px 0 !important;
+      }
+    }
+
+    .name {
+      h5 {
+        font-family: 'MRegular';
+        font-size: 1rem !important;
+        margin: 0 !important;
+      }
+    }
+
+    .bottom {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+
+      .price-holder {
+        margin-top: 5px;
+
+        p {
+          color: var(--ion-color-primary);
+          font-family: 'MSBold';
+          margin: 0 !important;
+
+          span {
+            font-family: 'MRegular';
+            color: #808C9F;
+            font-size: 0.9rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section {
+  .sec-title {
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      color: var(--ion-color-primary);
+      font-family: 'MSBold' !important;
+    }
+
+    p {
+      color: #808C9F;
+      font-family: 'MRegular' !important;
+    }
+  }
+}
+
+.product-slider {
+  .swiper-pagination {
+    right: 20px !important;
+    text-align: right !important;
+    padding-right: 2rem !important;
+  }
+}
+
+.result-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 3px 5px 43px rgba(0, 0, 0, 0.05);
+  margin: 10px 0;
+
+  ion-item {
+    .thumb {
+      margin-right: 10px;
+
+      img {
+        height: 15vh;
+      }
+
+    }
+
+    ion-label {
+      p {
+        color: #808C9F;
+        font-family: 'MLight';
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: #244574;
+        font-family: 'MRegular';
+      }
+
+      h5 {
+        color: var(--ion-color-primary);
+        font-family: 'MSBold';
+        margin: 0 !important;
+
+        span {
+          font-family: 'MRegular';
+          color: #808C9F;
+          font-size: 0.7rem !important;
+        }
+      }
+    }
+  }
+}
+
+.order-list {
+  ion-item {
+    --inner-padding-end: 10px;
+    border-radius: 0.5rem;
+    box-shadow: 3px 5px 43px rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+
+    .thumb {
+      margin-right: 10px !important;
+
+      img {
+        height: 4rem;
+      }
+    }
+
+
+    ion-label {
+      ion-row {
+        ion-col {
+          ion-button {
+            --box-shadow: none;
+            --color: white;
+            font-size: 0.7rem;
+            margin-top: 0;
+            text-transform: none;
+          }
+
+          ion-icon {
+            color: #FFBF2C;
+          }
+
+          p {
+            color: #808C9F;
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      h2 {
+        color: var(--ion-color-primary);
+        font-family: 'MMedium';
+      }
+
+      p {
+        color: #808C9F;
+        font-family: 'MLight';
+        font-size: 0.7rem;
+
+        span {
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+
+  }
+}
+
+.flex {
+  display: flex;
+
+}
+
+.sb {
+  justify-content: space-between;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-end {
+  justify-content: flex-end;
+}
+
+.al-center {
+  align-items: center;
+}
+
+.al-fend {
+  align-items: flex-end;
+}
+
+.al-fstart {
+  align-items: flex-start;
+}

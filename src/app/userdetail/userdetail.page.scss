@@ -1,0 +1,145 @@
+ion-header
+{
+    ion-toolbar
+    {
+        --color: var(--ion-color-primary);
+        --background: transparent;
+        position: absolute !important;
+        width: 100% !important;
+
+
+       #cart
+       {
+           padding-right: 10px !important;
+       }
+
+        .badge-holder
+        {
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            z-index: 100 !important;
+            ion-badge
+            {
+                --background: #FF4040;
+                border-radius: 50%;
+                color: white;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+}
+
+
+ion-content
+{
+    
+    .product-slider
+    {
+        height: 40vh;
+
+        ion-slides
+        {
+            height: 100%;
+
+            .product-img
+            {
+                img
+                {
+                    height: 30vh;
+                }
+            }
+        }
+    }
+
+    .content
+    {
+        .name
+        {
+            h2
+            {
+                font-family: 'MSBold';
+                color: #244574;
+                margin: 0;
+            }
+
+            p
+            {
+                font-family: 'MRegular';
+                color: #808C9F;
+                margin: 0 !important;
+            }
+        }
+
+        .cat-rating
+        {
+            
+            p
+            {
+                color: #808C9F;
+                margin: 0 !important;
+            }
+
+            .category
+            {
+                p
+                {
+                    font-family: 'MLight';
+                }
+            }
+
+        }
+
+        .description
+        {
+            p
+            {
+                color: #808C9F;
+                font-family: 'Mlight';
+            }
+        }
+
+        .review-holder
+        {
+            .title
+            {
+                h5
+                {
+                    color: #2B4F81;
+                    font-family: 'MRegular';
+                }
+
+                p
+                {
+                    color: #808C9F;
+                    font-family: 'MLight';
+                }
+            }
+
+
+            h1
+            {
+                color: var(--ion-color-primary);
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+
+        .section
+        {
+            margin-top: 10vh;
+        }
+    }
+}
+
+ion-footer
+{
+    background: transparent !important;
+    ion-select
+    {
+        font-family: 'MSBold';
+        font-size: 1.5rem !important;
+        min-width: 100% !important;
+    }
+}

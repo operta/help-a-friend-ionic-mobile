@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.333" height="21.778" viewBox="0 0 19.333 21.778">
+  <g id="search" transform="translate(1.167 1.167)">
+    <g id="shopping-bag" transform="translate(0 -6)">
+      <g id="shopping-bag-2" data-name="shopping-bag" transform="translate(0 6)">
+        <path id="Path" d="M2.833,0,0,3.889V17.5a1.917,1.917,0,0,0,1.889,1.944H15.111A1.917,1.917,0,0,0,17,17.5V3.889L14.167,0Z" fill="none" stroke="#29c17e" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.333"/>
+        <path id="Path-2" data-name="Path" d="M0,.486H17" transform="translate(0 3.403)" fill="none" stroke="#29c17e" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.333"/>
+        <path id="Path-3" data-name="Path" d="M7.556,0A3.835,3.835,0,0,1,3.778,3.889,3.835,3.835,0,0,1,0,0" transform="translate(4.722 7.778)" fill="none" stroke="#29c17e" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.333"/>
+      </g>
+    </g>
+  </g>
+</svg>

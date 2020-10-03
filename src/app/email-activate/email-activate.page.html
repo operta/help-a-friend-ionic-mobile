@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" mode="md"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-col size="12" class="ion-no-padding" *ngIf="success">
+    <div class="topic-holder ion-padding">
+      <h1>  Account successfully activated. <a routerLink="/login">Log in.</a></h1>
+    </div>
+    <div class="img-holder ion-text-left ion-padding ">
+      <img src="https://i.ibb.co/rw7yWgw/explore.png" alt="" class="animate__animated animate__fadeInLeft" >
+    </div>
+  </ion-col>
+  <ion-col size="12" class="ion-no-padding" *ngIf="error">
+    <div class="topic-holder ion-padding">
+      <h1>Invalid or expired activation key</h1>
+      <p class="ion-text-wrap ion-text-left">
+        Please register again, or contact as at <a href="mailto:info@help-a-friend.com">info@help-a-friend.com</a>.
+      </p>
+    </div>
+    <div class="img-holder ion-text-left ion-padding ">
+      <img src="https://i.ibb.co/rw7yWgw/explore.png" alt="" class="animate__animated animate__fadeInLeft" >
+    </div>
+  </ion-col>
+</ion-content>

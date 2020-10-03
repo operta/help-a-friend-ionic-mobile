@@ -1,0 +1,59 @@
+<ion-content class="ion-padding">
+  <div class="title-holder ion-text-center">
+    <h1>Login</h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="social-btns-holder ion-padding-vertical">
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block">
+          <ion-icon slot="icon-only" src="assets/imgs/icn-fb.svg"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block">
+          <ion-icon slot="icon-only" src="assets/imgs/icn-google.svg"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <form  [formGroup]="loginForm" class="the-form ion-padding-vertical">
+    <div class="input-item">
+      <ion-label>Email Address</ion-label>
+      <ion-item>
+        <ion-input type="email" [placeholder]="'emailaddress' | translate"
+                   required formControlName="username"></ion-input>
+      </ion-item>
+    </div>
+    <div class="input-item">
+      <ion-label>Password</ion-label>
+      <ion-item>
+        <ion-input type="password"  [placeholder]="'password' | translate"
+                   required formControlName="password"></ion-input>
+      </ion-item>
+    </div>
+    <div class="rem-forget-holder">
+      <ion-row>
+        <ion-col size="6" class="ion-no-padding">
+        </ion-col>
+        <ion-col size="6" class="ion-text-right ion-no-padding">
+          <p (click)="goForgetPassword()">Forgot password?</p>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="btn-holder ion-padding-vertical">
+      <ion-button (click)="Login()" expand="block" shape="round">
+        LOG IN
+      </ion-button>
+    </div>
+  </form>
+  <div class="bottom-field-holder ion-text-center">
+    <p>Don’t have a account?&nbsp;<span (click)="goSignup()">Sign up</span></p>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border ion-color-danger">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="assets/imgs/icn-menu.svg">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title color="danger"><span style="color: red">My Requests</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-color-danger">
+  <ng-container *ngIf="requests$ | async as requests">
+    <ng-container *ngIf="requests && requests.length > 0; else noRequests">
+      <div class="order-list animate__animated animate__bounceInUp">
+        <app-request-overview *ngFor="let item of requests" [request]="item"></app-request-overview>
+      </div>
+    </ng-container>
+    <ng-template #noRequests>
+      <ion-text>You have no requests for help.</ion-text>
+    </ng-template>
+  </ng-container>
+
+</ion-content>
