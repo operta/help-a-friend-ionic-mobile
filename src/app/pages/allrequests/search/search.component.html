@@ -1,0 +1,15 @@
+<div class="searchbar-holder">
+  <!--<ion-searchbar mode="md" type="text" placeholder="Enter product"-->
+                 <!--showCancelButton="never"-->
+                 <!--debounce="500">-->
+                 <!--&lt;!&ndash;(ionBlur)="CloseList()" (ionClear)="CloseList()"&ndash;&gt;-->
+                 <!--&lt;!&ndash;(ionInput)="getItems($event)">&ndash;&gt;-->
+  <!--</ion-searchbar>-->
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select [value]="idCategory" interface="action-sheet" (ionChange)="categorySelected($event)">
+      <ion-select-option *ngFor="let cat of categories$ | async" [value]="cat.id">{{cat.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</div>
+

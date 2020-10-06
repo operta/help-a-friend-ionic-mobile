@@ -1,9 +1,9 @@
 import {Observable} from 'rxjs';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {IRequestCategory} from '../../../shared/model/request-category.model';
-import {SERVER_API_URL} from '../../../app.constants';
-import {createRequestOption} from '../../../shared/util/request-util';
+import {IRequestCategory} from '../../shared/model/request-category.model';
+import {SERVER_API_URL} from '../../app.constants';
+import {createRequestOption} from '../../shared/util/request-util';
 
 type EntityResponseType = HttpResponse<IRequestCategory>;
 type EntityArrayResponseType = HttpResponse<IRequestCategory[]>;

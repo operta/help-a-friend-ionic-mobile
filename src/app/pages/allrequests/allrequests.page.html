@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="assets/imgs/icn-menu.svg">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Open requests</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="auto">
+                <app-search (selectedCategoryId)="selectedCategory($event)"></app-search>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="auto">
+
+                <ng-container *ngIf="requests$ | async as requests">
+                    <ng-container *ngIf="requests && requests.length > 0; else noRequests">
+                        <div class="order-list animate__animated animate__bounceInUp">
+                            <app-helper-request-overview *ngFor="let req of requests"
+                                                         [request]="req"></app-helper-request-overview>
+                        </div>
+                    </ng-container>
+                    <ng-template #noRequests>
+                        <h1>There are currently no active help requests</h1>
+                        <ion-row>
+                            <ion-col size="6" id="img-col">
+                                <img src="https://i.ibb.co/vJ7v7PR/exploree.png" alt="">
+                            </ion-col>
+                            <ion-col size="6" class="flex al-fend">
+                                <div class="no-holder ion-text-left">
+                                    <img src="assets/imgs/alert-circle.svg" alt="">
+                                    <h1>No Results</h1>
+                                    <p>Try different keyword</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ng-template>
+                </ng-container>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>
+
+
+

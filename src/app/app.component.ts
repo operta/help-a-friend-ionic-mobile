@@ -14,9 +14,9 @@ export class AppComponent implements OnInit{
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Home',
-      url: 'home',
-      icon: 'home-outline'
+      title: 'Help',
+      url: 'allrequests',
+      icon: 'plus'
     },
     {
       title: 'My Help Requests',

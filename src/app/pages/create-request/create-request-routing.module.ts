@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'pick-category',
-    loadChildren: () => import('./pick-category/pick-category.module').then(m => m.PickCategoryPageModule)
+    loadChildren: () => import('../pick-category/pick-category.module').then(m => m.PickCategoryPageModule)
   },
   {
     path: 'create-request',

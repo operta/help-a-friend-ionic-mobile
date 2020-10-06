@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RequestCategory} from '../../../shared/model/request-category.model';
+import {RequestCategory} from '../../shared/model/request-category.model';
 import {RequestCategoryService} from './request-category.service';
 import {Router} from '@angular/router';
 
