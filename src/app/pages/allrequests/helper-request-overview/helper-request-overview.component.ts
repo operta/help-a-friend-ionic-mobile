@@ -28,12 +28,4 @@ export class HelperRequestOverviewComponent implements OnInit {
   hasOfferedHelpAlready(){}
 
 
-  goToChat(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    // TODO go to chat
-    console.log('chat cliccked');
-  }
-
-
 }
