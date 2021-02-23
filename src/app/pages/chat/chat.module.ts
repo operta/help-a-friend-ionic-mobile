@@ -2,11 +2,10 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
-import {ChatPage} from './chat.page';
-
-import {ChatPageRoutingModule} from './chat-routing.module';
-import {PusherService} from '../pusher.service';
+import {PusherService} from './pusher.service';
 import {HttpClientModule} from '@angular/common/http';
+import {UResponseService} from './u-response.service';
+import {RequestChatComponent} from './request-chat/request-chat.component';
 
 
 @NgModule({
@@ -14,13 +13,18 @@ import {HttpClientModule} from '@angular/common/http';
         CommonModule,
         FormsModule,
         IonicModule,
-        ChatPageRoutingModule,
         HttpClientModule
     ],
-    declarations: [ChatPage],
+    declarations: [
+        RequestChatComponent
+    ],
     providers: [
-        PusherService
+        PusherService,
+        UResponseService,
+    ],
+    exports: [
+        RequestChatComponent
     ]
 })
-export class ChatPageModule {
+export class ChatModule {
 }

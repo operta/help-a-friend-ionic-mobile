@@ -23,10 +23,10 @@ const routes: Routes = [
         path: 'onboarding',
         loadChildren: () => import('./pages/onboarding/onboarding.module').then(m => m.OnboardingPageModule)
     },
-    {
-        path: 'chat',
-        loadChildren: () => import('./chat/chat.module').then(m => m.ChatPageModule)
-    },
+    // {
+    //     path: 'chat',
+    //     loadChildren: () => import('./pages/chat/chat.module').then(m => m.ChatModule)
+    // },
     {
         path: 'userdetail',
         loadChildren: () => import('./userdetail/userdetail.module').then(m => m.UserDetailPageModule)
