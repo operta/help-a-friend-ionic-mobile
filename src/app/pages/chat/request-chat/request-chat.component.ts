@@ -5,6 +5,7 @@ import {UResponseService} from '../u-response.service';
 import {IUResponse} from '../../../shared/model/u-response.model';
 import Pusher from 'pusher-js';
 import {convertObjectLogDates} from '../../../shared/util/request-util';
+import {map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-request-chat',
@@ -15,7 +16,7 @@ export class RequestChatComponent implements OnInit, OnChanges {
     @Input() request: URequest;
     inputMessage = '';
     channelName: string;
-    messages: Array<IUResponse> = [];
+    responses: Array<IUResponse> = [];
     channel: any;
     pusher: Pusher;
 
@@ -24,6 +25,7 @@ export class RequestChatComponent implements OnInit, OnChanges {
 
     ngOnChanges() {
         if (this.request && this.request.id != null) {
+            this.loadResponses(this.request.id);
             this.channelName = this.request.id.toString();
             this.channel = this.pusherService.init(this.channelName);
             this.channel.bind('new_message', (response: IUResponse) => {
@@ -35,6 +37,12 @@ export class RequestChatComponent implements OnInit, OnChanges {
 
     }
 
+    private loadResponses(requestId: number) {
+        this.responseService.loadResponsesOfRequest(requestId)
+            .pipe(map(res => res.body))
+            .subscribe((responses: IUResponse[]) => this.responses = responses);
+    }
+
     ngOnInit(): void {
 
     }
@@ -43,9 +51,9 @@ export class RequestChatComponent implements OnInit, OnChanges {
         if (this.inputMessage !== '') {
             this.responseService.create(this.inputMessage, this.channelName)
                 .subscribe((response) => {
-                    console.log(response.body);
-                }
-         );
+                        console.log(response.body);
+                    }
+                );
         }
     }
 

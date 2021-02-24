@@ -29,14 +29,14 @@ export class UResponseService {
                         idUserId: +value,
                         idRequestId: +channel
                     };
-                    const responseWithDate = this.convertDateFromClient(response)
+                    const responseWithDate = this.convertDateFromClient(response);
 
                     return this.http
                         .post<IUResponse>(SERVER_API_URL + 'api/chat/message', responseWithDate,
                             {
                                 observe: 'response',
                                 params: {
-                                'channel-name': channel
+                                    'channel-name': channel
                                 }
                             })
                         .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
@@ -44,6 +44,11 @@ export class UResponseService {
             );
     }
 
+    loadResponsesOfRequest(requestId: number): Observable<EntityArrayResponseType> {
+        return this.http
+            .get<IUResponse[]>(`${this.resourceUrl}/request/${requestId}`, {observe: 'response'})
+            .pipe(map((res: EntityArrayResponseType) => this.convertDateArrayFromServer(res)));
+    }
     // update(uRequest: IUResponse): Observable<EntityResponseType> {
     //     const copy = this.convertDateFromClient(uRequest);
     //     return this.http
