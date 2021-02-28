@@ -30,7 +30,7 @@ export class RequestChatComponent implements OnInit, OnChanges {
             this.channel = this.pusherService.init(this.channelName);
             this.channel.bind('new_message', (response: IUResponse) => {
                 const data = convertObjectLogDates(response);
-                console.log(data);
+                this.responses.push(data);
             });
 
         }
@@ -51,10 +51,11 @@ export class RequestChatComponent implements OnInit, OnChanges {
         if (this.inputMessage !== '') {
             this.responseService.create(this.inputMessage, this.channelName)
                 .subscribe((response) => {
-                        console.log(response.body);
+                        this.inputMessage = '';
                     }
                 );
         }
     }
+
 
 }

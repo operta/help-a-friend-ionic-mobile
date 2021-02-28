@@ -12,7 +12,7 @@ type EntityArrayResponseType = HttpResponse<IUResponse[]>;
 
 @Injectable()
 export class UResponseService {
-    public resourceUrl = SERVER_API_URL + 'api/u-reponses';
+    public resourceUrl = SERVER_API_URL + 'api/u-responses';
 
     constructor(protected http: HttpClient, private storage: Storage) {
     }

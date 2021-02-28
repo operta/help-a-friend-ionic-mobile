@@ -6,6 +6,7 @@ import {PusherService} from './pusher.service';
 import {HttpClientModule} from '@angular/common/http';
 import {UResponseService} from './u-response.service';
 import {RequestChatComponent} from './request-chat/request-chat.component';
+import {ResponseComponent} from './response/response.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {RequestChatComponent} from './request-chat/request-chat.component';
         HttpClientModule
     ],
     declarations: [
-        RequestChatComponent
+        RequestChatComponent,
+        ResponseComponent
     ],
     providers: [
         PusherService,
