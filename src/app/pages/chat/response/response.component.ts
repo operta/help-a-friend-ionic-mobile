@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IUResponse} from '../../../shared/model/u-response.model';
+import {IUResponse, UResponse} from '../../../shared/model/u-response.model';
+import {UResponseService} from '../u-response.service';
 
 @Component({
   selector: 'app-response',
@@ -9,12 +10,24 @@ import {IUResponse} from '../../../shared/model/u-response.model';
 export class ResponseComponent implements OnInit {
   @Input() response: IUResponse;
 
-  constructor() { }
+  constructor(private responseService: UResponseService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.response)
+  }
 
   createNewResponse() {
-    // TODO
+    // TODO CALL INPUT MESSAGE COMPONENT
+    const text = 'response on response';
+    const response: UResponse = {
+      message: text,
+      idResponseId: this.response.id
+    };
+    this.responseService.createResponseOfResponse(response)
+        .subscribe((res) => {
+          console.log('response created');
+          // TODO close input message
+        })
   }
 
 }

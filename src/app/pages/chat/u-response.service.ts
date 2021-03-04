@@ -6,6 +6,8 @@ import {IUResponse} from '../../shared/model/u-response.model';
 import {from, Observable} from 'rxjs';
 import {map, switchMap} from 'rxjs/operators';
 import {Storage} from '@ionic/storage';
+import {createRequestOption} from '../../shared/util/request-util';
+import {IURequest} from '../../shared/model/u-request.model';
 
 type EntityResponseType = HttpResponse<IUResponse>;
 type EntityArrayResponseType = HttpResponse<IUResponse[]>;
@@ -18,8 +20,6 @@ export class UResponseService {
     }
 
     create(message: string, channel: string): Observable<EntityResponseType> {
-
-
         return from(this.storage.get('userId'))
             .pipe(
                 switchMap((value) => {
@@ -44,6 +44,28 @@ export class UResponseService {
             );
     }
 
+    createResponseOfResponse(response: IUResponse): Observable<EntityResponseType> {
+        return from(this.storage.get('userId'))
+            .pipe(
+                switchMap((value) => {
+
+                    const item: IUResponse = {
+                        ...response,
+                        idUserId: +value,
+                    };
+                    const responseWithDate = this.convertDateFromClient(item);
+                    console.log(responseWithDate);
+
+                    return this.http
+                        .post<IUResponse>(`${this.resourceUrl}`, responseWithDate,
+                            {
+                                observe: 'response',
+                            })
+                        .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
+                })
+            );
+    }
+
     loadResponsesOfRequest(requestId: number): Observable<EntityArrayResponseType> {
         return this.http
             .get<IUResponse[]>(`${this.resourceUrl}/request/${requestId}`, {observe: 'response'})
@@ -55,6 +77,14 @@ export class UResponseService {
     //         .put<IUResponse>(this.resourceUrl, copy, {observe: 'response'})
     //         .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
     // }
+
+    query(req?: any): Observable<EntityArrayResponseType> {
+        const options = createRequestOption(req);
+        return this.http
+            .get<IUResponse[]>(this.resourceUrl, {params: options, observe: 'response'})
+            .pipe(map((res: EntityArrayResponseType) => this.convertDateArrayFromServer(res)));
+    }
+
 
     protected convertDateFromClient(item: IUResponse): IUResponse {
         const copy: IUResponse = Object.assign({}, item, {

@@ -15,7 +15,7 @@
       <div class="chat-box">
         <div class="message-area">
           <div class="message" *ngFor="let response of responses">
-            <p>{{response.message}}</p>
+            <app-response [response]="response"></app-response>
           </div>
         </div>
         <div class="emo-area">
