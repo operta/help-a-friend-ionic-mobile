@@ -13,7 +13,6 @@ export class ResponseComponent implements OnInit {
   constructor(private responseService: UResponseService) { }
 
   ngOnInit() {
-    console.log(this.response)
   }
 
   createNewResponse() {
@@ -25,9 +24,9 @@ export class ResponseComponent implements OnInit {
     };
     this.responseService.createResponseOfResponse(response)
         .subscribe((res) => {
-          console.log('response created');
+          this.response.childResponses.push(res.body);
           // TODO close input message
-        })
+        });
   }
 
 }

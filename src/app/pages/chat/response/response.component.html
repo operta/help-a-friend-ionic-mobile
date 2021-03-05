@@ -1,7 +1,14 @@
 <p>
-  response works!
+    response works!
 
-  {{response.message}}  PARENT: {{response.idResponseMessage}}
+    {{response.message}}  PARENT: {{response.idResponseMessage}}
 
-  <button (click)="createNewResponse()">Respond</button>
+    <button (click)="createNewResponse()">Respond</button>
+
 </p>
+<div class="row" style="padding-left: 10%;" *ngIf="response.childResponses && response.childResponses.length > 0">
+    <div class="col-12" *ngFor="let item of response.childResponses">
+        <app-response [response]="item"></app-response>
+    </div>
+
+</div>
