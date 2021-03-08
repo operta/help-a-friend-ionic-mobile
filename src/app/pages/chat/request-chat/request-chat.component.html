@@ -10,27 +10,13 @@
 
 <!--<ion-content>-->
 
-  <div id="container">
-    <div class="main">
-      <div class="chat-box">
+
+          <app-message-input (message)="sendMessage($event)"></app-message-input>
+
         <div class="message-area">
           <div class="message" *ngFor="let response of responses">
             <app-response [response]="response"></app-response>
           </div>
         </div>
-        <div class="emo-area">
-          <!-- emoji-panel component comes here -->
-        </div>
-        <div class="input-area">
-          <form (submit)="sendMessage()" name="messageForm" #messageForm="ngForm">
-            <ion-input type="text" name="message" id="message" [(ngModel)]="inputMessage"
-                       placeholder="Say something nice..."></ion-input>
-            <button>
-              <ion-icon name="send"></ion-icon>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+
 <!--</ion-content>-->

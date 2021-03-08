@@ -47,7 +47,9 @@ export class RequestChatComponent implements OnInit, OnChanges {
 
     }
 
-    sendMessage() {
+    sendMessage(event: any) {
+        console.log(event);
+        this.inputMessage = event;
         if (this.inputMessage !== '') {
             this.responseService.create(this.inputMessage, this.channelName)
                 .subscribe((response) => {

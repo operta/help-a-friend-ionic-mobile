@@ -83,5 +83,6 @@
     "noResponses": "Još niste odgovorili ni na jedan zahtjev.",
     "noRequests": "Još niste napravili ni jedan  zahtjev za pomoć.",
     "language": "Jezik",
-    "about": "O nama"
+    "about": "O nama",
+    "messageLengthError": "Tekst je prekratak!"
 }

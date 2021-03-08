@@ -1,3 +1,9 @@
-<p>
-  message-input works!
-</p>
+<ion-item>
+    <ion-textarea name="inputMessage" type="text" autoGrow="true" rows="2" [(ngModel)]="inputMessage"
+                  [placeholder]="placeholder"></ion-textarea>
+</ion-item>
+
+    <ion-button expand="full"(click)="emitMessage()">
+        <span>Send message</span>&nbsp;<ion-icon name="send"></ion-icon>
+    </ion-button>
+

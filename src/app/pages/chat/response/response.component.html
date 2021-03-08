@@ -3,7 +3,10 @@
 
     {{response.message}}  PARENT: {{response.idResponseMessage}}
 
-    <button (click)="createNewResponse()">Respond</button>
+    <button (click)="showResponse = !showResponse">Respond</button>
+    <ng-container *ngIf="showResponse">
+        <app-message-input (message)="createNewResponse($event)" [placeholder]="'Write your response here...'"></app-message-input>
+    </ng-container>
 
 </p>
 <div class="row" style="padding-left: 10%;" *ngIf="response.childResponses && response.childResponses.length > 0">
