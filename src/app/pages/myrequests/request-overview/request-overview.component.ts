@@ -42,13 +42,6 @@ export class RequestOverviewComponent implements OnChanges {
         }));
     }
 
-    goToChat(event) {
-        event.stopPropagation();
-        event.preventDefault();
-        // TODO go to chat
-        console.log('chat cliccked');
-    }
-
 
 
 }

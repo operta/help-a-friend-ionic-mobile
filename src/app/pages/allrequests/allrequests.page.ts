@@ -50,8 +50,10 @@ export class AllrequestsPage implements OnInit, ViewWillEnter {
         this.filterRequests();
     }
 
+    // TODO add location filter
 
-    // TODO  do not load all requests at once, save requests locally
+
+    // TODO infinite scroll for active requests
 
 
 }

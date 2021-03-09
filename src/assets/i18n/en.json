@@ -86,5 +86,6 @@
   "about": "About",
   "finishRequest": "Finish request",
   "requestFinished": "Request finished",
-  "messageLengthError": "Message is too short!"
+  "messageLengthError": "Message is too short!",
+  "replyPosted": "Reply posted!"
 }

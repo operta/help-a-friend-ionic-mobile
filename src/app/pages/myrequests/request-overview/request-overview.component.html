@@ -8,11 +8,6 @@
     </ion-label>
     <div class="thumb" slot="end" *ngIf="!request.isArchived && !request.isFinished">
         <ng-container *ngIf="hasHelpers$ | async as hasHelpers">
-            <div class="btn-holder" *ngIf="hasHelpers">
-                <ion-button expand="block" color="success" (click)="goToChat($event)">
-                    CHAT
-                </ion-button>
-            </div>
             <ng-container *ngIf="!hasHelpers">
                 <ion-label>
                     <h2>Waiting for a helper</h2>
